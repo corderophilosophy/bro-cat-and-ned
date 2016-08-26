@@ -1,3 +1,7 @@
 body {
   background: cornsilk;
 }
+
+#root h1 {
+  margin-top: 0;
+}

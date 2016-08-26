@@ -11,6 +11,11 @@
   "author": "Rich Cordero <rich@corderophilosophy.com> (http://corderophilosophy.com/)",
   "license": "MIT",
   "devDependencies": {
+    "babel-core": "6.14.0",
+    "babel-loader": "6.2.5",
+    "babel-preset-es2015": "6.14.0",
+    "babel-preset-react": "6.11.1",
+    "babel-preset-react-hmre": "1.1.1",
     "clean-webpack-plugin": "0.1.10",
     "css-loader": "0.24.0",
     "extract-text-webpack-plugin": "1.0.1",

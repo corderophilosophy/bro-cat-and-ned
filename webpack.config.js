@@ -4,12 +4,15 @@ const merge = require('webpack-merge');
 const validate = require('webpack-validator');
 
 const parts = require('./lib/parts');
+const TARGET = process.env.npm_lifecycle_event;
 
 const PATHS = {
   src: path.join(__dirname, 'src', 'assets', 'js'),
   styles: path.join(__dirname, 'src', 'assets', 'css', 'main.css'),
   public: path.join(__dirname, 'public')
 };
+
+process.env.BABEL_ENV = TARGET;
 
 const common = {
   entry: {
@@ -20,16 +23,29 @@ const common = {
     path: PATHS.public,
     filename: '[name].js'
   },
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.jsx?$/,
+        loaders: ['babel?cacheDirectory'],
+        include: PATHS.src
+      },
+    ]
+  },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'The Adventures of Bro-Cat and Ned'
+      title: 'The Adventures of Bro-Cat and Ned',
+      template: './src/index.html'
     })
   ]
 };
 
 var config;
 
-switch(process.env.npm_lifecycle_event) {
+switch(TARGET) {
   case 'build':
     config = merge(
       common,
