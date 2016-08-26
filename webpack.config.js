@@ -18,7 +18,7 @@ const common = {
   },
   output: {
     path: PATHS.public,
-    filename: 'assets/js/[name].js'
+    filename: '[name].js'
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -34,14 +34,24 @@ switch(process.env.npm_lifecycle_event) {
     config = merge(
       common,
       {
-        devtool: 'source-map'
+        devtool: 'source-map',
+        output: {
+          path: PATHS.public,
+          filename: './assets/js/[name].[chunkhash].js',
+          chunkFilename: '[chunkhash].js'
+        }
       },
+      parts.clean(PATHS.public),
       parts.setFreeVariable(
         'process.env.NODE_ENV',
         'production'
       ),
+      parts.extractBundle({
+        name: 'vendor',
+        entries: ['react', 'react-dom', 'redux', 'react-redux']
+      }),
       parts.minify(),
-      parts.setupCSS(PATHS.styles)
+      parts.extractCSS(PATHS.styles)
     );
     break;
   default:
