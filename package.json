@@ -1,0 +1,27 @@
+{
+  "name": "bro-cat-and-ned",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server"
+  },
+  "keywords": [],
+  "author": "Rich Cordero <rich@corderophilosophy.com> (http://corderophilosophy.com/)",
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "0.24.0",
+    "html-webpack-plugin": "2.22.0",
+    "react": "15.3.1",
+    "react-dom": "15.3.1",
+    "react-redux": "4.4.5",
+    "redux": "3.5.2",
+    "style-loader": "0.13.1",
+    "tachyons": "4.1.2",
+    "webpack": "1.13.2",
+    "webpack-dev-server": "1.15.0",
+    "webpack-merge": "0.14.1",
+    "webpack-validator": "2.2.7"
+  }
+}
