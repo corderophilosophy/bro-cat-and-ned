@@ -5,12 +5,8 @@ import Footer from '../components/Footer';
 
 const Home = (props) => {
   return (
-    <div className="">
-      <Header />
-        <div className="">
-          {props.children}
-        </div>
-      <Footer />
+    <div className="pt6 flex flex-column">
+      <p> This is where a comic goes </p>
     </div>
   )
 };

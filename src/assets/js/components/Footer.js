@@ -2,16 +2,16 @@ import React from 'react';
 
 require('!style!css!tachyons');
 
-const Strip = (props) => {
+const Footer = (props) => {
   return (
-    <footer className="">
+    <footer className="ph3 ph4-ns pv6 ba b--black-10 black-70">
       <div classname="">
-        <a href="mailto:brocatandned@gmail.com" className="">brocatandned@gmail.com</a>
-        <p className="">All Rights Reserved</p>
-        <p className="">Which is to say, any content created by, and posted on, this site may be reproduced at will so long as any use of it does not offend the sensibilities of the rights holders (i.e. Gabrielle F. Graham and Rich Cordero, or, perhaps in a more just world, Nimbus Aloysius Graham and Ned Graham).</p>
+        <a href="mailto:brocatandned@gmail.com" className="link b f3 f2-ns dim black-70 lh-solid">brocatandned@gmail.com</a>
+        <p className="f6 db b ttu lh-solid">All Rights Reserved</p>
+        <p className="f6 db lh-solid">Which is to say, any content created by, and posted on, this site may be reproduced at will so long as any use of it does not offend the sensibilities of the rights holders (i.e. Gabrielle F. Graham and Rich Cordero, or, perhaps in a more just world, Nimbus Aloysius Graham and Ned Graham).</p>
       </div>
     </footer>
   )
 };
 
-module.exports = Strip;
+module.exports = Footer;
