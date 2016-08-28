@@ -30,5 +30,8 @@
     "webpack-dev-server": "1.15.0",
     "webpack-merge": "0.14.1",
     "webpack-validator": "2.2.7"
+  },
+  "dependencies": {
+    "react-router": "2.7.0"
   }
 }
