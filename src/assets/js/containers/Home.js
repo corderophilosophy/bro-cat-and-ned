@@ -7,7 +7,7 @@ const Home = (props) => {
   return (
     <div className="">
       <Header />
-        <div className="flex flex-column pt6">
+        <div className="">
           {props.children}
         </div>
       <Footer />
