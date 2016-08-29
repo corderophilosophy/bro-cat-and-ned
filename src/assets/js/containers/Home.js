@@ -50,39 +50,39 @@ export default class Home extends Component {
     return (
       <div className="pt6 mw6 mw8-ns center pa3 ph5-ns">
         <article className="cf">
-          <div className="fl w-100 w-50-ns tc">
+          <div className="pa2 fl w-100 w-50-ns tc bg-near-black">
             <img
-              className="mw-100"
+              className="mw-100 br2"
               src={img1}
               alt="Nimbus and Ned - First Panel"
               title="Nimbus and Ned - First Panel"
             />
-            <p className="lh-solid fw7">Nimbus: NED! Something's happening!</p>
+            <p className="lh-solid washed-blue fw7">Nimbus: NED! Something's happening!</p>
           </div>
-          <div className="fl w-100 w-50-ns tc">
+          <div className="pa2 fl w-100 w-50-ns tc bg-near-black">
             <img
-              className="mw-100"
+              className="mw-100 br2"
               src={img2}
               alt="Nimbus and Ned - Second Panel"
               title="Nimbus and Ned - Second Panel"
             />
-            <p className="lh-solid fw7">Ned: What??</p>
+            <p className="lh-solid light-red fw7">Ned: What??</p>
           </div>
         </article>
         <article className="cf">
-          <div className="fl w-100 w-50-ns tc">
+          <div className="pa2 fl w-100 w-50-ns tc bg-near-black">
             <img
-              className="mw-100"
+              className="mw-100 br2"
               src={img3}
               alt="Nimbus and Ned - 3rd Panel"
               title="Nimbus and Ned - 3rd Panel"
             />
-            <p className="lh-solid fw7">Nimbus: We're a webcomic!</p>
-            <p className="lh-solid fw7">Ned: WHAT!?!?</p>
+            <p className="lh-solid washed-blue fw7">Nimbus: We're a webcomic!</p>
+            <p className="lh-solid light-red fw7">Ned: WHAT!?!?</p>
           </div>
-          <div className="fl w-100 w-50-ns tc">
+          <div className="pa2 fl w-100 w-50-ns tc bg-near-black">
             <img
-              className="mw-100"
+              className="mw-100 br2"
               src={img1}
               alt="Nimbus and Ned - First Panel"
               title="Nimbus and Ned - First Panel"
