@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-const img1 = require('/home/richcordero/Documents/projects/Toys/bro-cat-and-ned/src/assets/img/b-c-a-n-1.jpg');
+const img1 = require('../../assets/img/b-c-a-n-1.jpg');
 
 export default class Home extends Component {
   constructor(props) {
