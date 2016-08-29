@@ -1,12 +1,20 @@
-import React, {PropTypes} from 'react';
+import React, { Component, PropTypes } from 'react';
+import Footer from './Footer';
 
-export default class Contact extends React.Component {
+export default class Contact extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
-    return (<h1>Contact Page</h1>);
+    return (
+      <div className="flex flex-column pt6">
+        <div className="footer ph3 ph4-ns">
+          <p>Please feel feel free to get in touch.</p>
+        </div>
+        <Footer />
+      </div>
+    );
   }
 }
 

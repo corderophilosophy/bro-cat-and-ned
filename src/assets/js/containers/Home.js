@@ -1,14 +1,34 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
+const img1 = require('/home/richcordero/Documents/projects/Toys/bro-cat-and-ned/src/assets/img/b-c-a-n-1.jpg');
 
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+export default class Home extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-const Home = (props) => {
-  return (
-    <div className="pt6 flex flex-column">
-      <p> This is where a comic goes </p>
-    </div>
-  )
+  render() {
+    return (
+      <div className="pt6 mw6 mw8-ns center pa3 ph5-ns">
+        <article className="cf">
+          <div className="fl w-100 w-50-ns bg-near-white tc">
+            {img1}
+          </div>
+          <div className="fl w-100 w-50-ns bg-light-gray tc">
+            <h1>Column Two</h1>
+          </div>
+        </article>
+        <article className="cf">
+          <div className="fl w-100 w-50-ns bg-near-white tc">
+            <h1>Column Three</h1>
+          </div>
+          <div className="fl w-100 w-50-ns bg-light-gray tc">
+            <h1>Column Four</h1>
+          </div>
+        </article>
+      </div>
+    );
+  }
+}
+
+Home.propTypes = {
 };
-
-module.exports = Home;
