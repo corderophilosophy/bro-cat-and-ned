@@ -9,7 +9,6 @@ const TARGET = process.env.npm_lifecycle_event;
 const PATHS = {
   src: path.join(__dirname, 'src', 'assets', 'js'),
   styles: path.join(__dirname, 'src', 'assets', 'css', 'main.css'),
-  images: path.join(__dirname, 'src', 'assets', 'img'),
   public: path.join(__dirname, 'public')
 };
 
@@ -34,6 +33,10 @@ const common = {
         loaders: ['babel?cacheDirectory'],
         include: PATHS.src
       },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loaders: ['file', 'image-webpack']
+      }
     ]
   },
   plugins: [
@@ -67,7 +70,6 @@ switch(TARGET) {
         name: 'vendor',
         entries: ['react', 'react-dom', 'redux', 'react-redux']
       }),
-      parts.loadImages(PATHS.images),
       parts.minify(),
       parts.extractCSS(PATHS.styles)
     );
