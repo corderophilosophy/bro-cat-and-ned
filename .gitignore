@@ -1,2 +1,7 @@
 node_modules
 public
+.snippets.js
+_posts
+.firebaserc
+database.rules.json
+firebase.json

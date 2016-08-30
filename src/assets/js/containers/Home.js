@@ -1,93 +1,90 @@
 import React, { Component, PropTypes } from 'react';
-const img1 = require('../../img/bcan1.jpg');
-const img2 = require('../../img/bcan2.jpg');
-const img3 = require('../../img/bcan3.jpg');
-// const img4 = require('./bcan4.jpg');
-//
-// Basic structure of comic object for S3 fetch/get
-// const comic = {
-//   id_ : "79047219792173-291",
-//   title: "",
-//   date: "",
-//   images: {
-//     img1: {
-//       src: 'source',
-//       caption: {
-//         Ned: "",
-//         Nimbus: "",
-//       }
-//     },
-//     img2: {
-//       src: 'source',
-//       caption: {
-//         Ned: "",
-//         Nimbus: "",
-//       }
-//     },
-//     img3: {
-//       src: 'source',
-//       caption: {
-//         Ned: "",
-//         Nimbus: "",
-//       }
-//     },
-//     img4: {
-//       src: 'source',
-//       caption: {
-//         Ned: "",
-//         Nimbus: "",
-//       }
-//     }
-//   }
-// };
+
+import * as firebase from 'firebase';
+
+import Panel from '../components/Panel';
+import config from '../../../../.snippets.js';
+
+firebase.initializeApp(config);
+
+const SRC_STUB = "require('../../img/";
 
 export default class Home extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      currentComic: {
+        title: "",
+        date: "",
+        images: {
+          img1: {
+            src: "bcan1.jpg",
+            caption: {
+              ned: "",
+              nimbus: ""
+            }
+          },
+          img2: {
+            src: "bcan2.jpg",
+            caption: {
+              ned: "",
+              nimbus: ""
+            }
+          },
+          img3: {
+            src: "bcan3.jpg",
+            caption: {
+              ned: "",
+              nimbus: ""
+            }
+          },
+          img4: {
+            src: "dosgatos.jpg",
+            caption: {
+              ned: "",
+              nimbus: ""
+            }
+          },
+        }
+      },
+    };
+  }
+
+  componentDidMount() {
+    const rootRef = firebase.database().ref('/').child('posts');
+    rootRef.on('value', snap => {
+      this.setState({
+        currentComic: Object.values(snap.val())[0]
+      });
+    });
   }
 
   render() {
     return (
       <div className="pt6 mw6 mw8-ns center pa3 ph5-ns">
         <article className="cf">
-          <div className="pa2 fl w-100 w-50-ns tc bg-near-black">
-            <img
-              className="mw-100 br2"
-              src={img1}
-              alt="Nimbus and Ned - First Panel"
-              title="Nimbus and Ned - First Panel"
-            />
-            <p className="lh-solid washed-blue fw7">Nimbus: NED! Something's happening!</p>
-          </div>
-          <div className="pa2 fl w-100 w-50-ns tc bg-near-black">
-            <img
-              className="mw-100 br2"
-              src={img2}
-              alt="Nimbus and Ned - Second Panel"
-              title="Nimbus and Ned - Second Panel"
-            />
-            <p className="lh-solid light-red fw7">Ned: What??</p>
-          </div>
+          <Panel
+            imgSrc={this.state.currentComic.images.img1.src}
+            alt={"Panel One"}
+            caption={this.state.currentComic.images.img1.caption}
+          />
+          <Panel
+            imgSrc={this.state.currentComic.images.img2.src}
+            alt={"Panel Two"}
+            caption={this.state.currentComic.images.img2.caption}
+          />
         </article>
         <article className="cf">
-          <div className="pa2 fl w-100 w-50-ns tc bg-near-black">
-            <img
-              className="mw-100 br2"
-              src={img3}
-              alt="Nimbus and Ned - 3rd Panel"
-              title="Nimbus and Ned - 3rd Panel"
-            />
-            <p className="lh-solid washed-blue fw7">Nimbus: We're a webcomic!</p>
-            <p className="lh-solid light-red fw7">Ned: WHAT!?!?</p>
-          </div>
-          <div className="pa2 fl w-100 w-50-ns tc bg-near-black">
-            <img
-              className="mw-100 br2"
-              src={img1}
-              alt="Nimbus and Ned - First Panel"
-              title="Nimbus and Ned - First Panel"
-            />
-          </div>
+          <Panel
+          imgSrc={this.state.currentComic.images.img3.src}
+          alt={"Panel Three"}
+          caption={this.state.currentComic.images.img3.caption}
+          />
+          <Panel
+          imgSrc={this.state.currentComic.images.img4.src}
+          alt={"Panel Four"}
+          caption={this.state.currentComic.images.img4.caption}
+          />
         </article>
       </div>
     );

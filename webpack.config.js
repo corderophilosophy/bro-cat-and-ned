@@ -78,7 +78,7 @@ switch(TARGET) {
     config = merge(
       common,
       {
-        devtool: 'eval-source-map'
+        devtool: 'source-map'
       },
       parts.setupCSS(PATHS.styles),
       parts.devServer({
